@@ -12,7 +12,7 @@ def portscan(map):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         conn = sock.connect((str(ip), port))
-        print('Found! IP:', ip, 'port', port, 'is open')
-        conn.close()
+        sock.close()
+        return True
     except:
-        pass
+        return False
